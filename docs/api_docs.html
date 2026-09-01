@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>API Documentation - Stacja Pogodowa</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 30px; background-color: #f9f9f9; color: #333; }
+    .module { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+    h2 { color: #e74c3c; margin-top: 30px; }
+    .method { background: #ecf0f1; padding: 10px; border-left: 4px solid #2980b9; margin-bottom: 10px; font-family: monospace; font-size: 14px;}
+    .desc { margin-left: 15px; margin-bottom: 20px; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="module">
+    <h1>Moduł: <code>db_manager.py</code></h1>
+    <p>Ten moduł zawiera klasy odpowiedzialne za komunikację z bazą danych SQLite3.</p>
+    
+    <h2>Klasa: <code>DatabaseManager</code></h2>
+    <p>Klasa zarządzająca połączeniem z bazą i wykonująca operacje zapisu pomiarów ze stacji pogodowej.</p>
+    
+    <div class="method">def insert_record(self, temp: float, pressure: float) <span>&#8594;</span> bool</div>
+    <div class="desc">Zapisuje pojedynczy pomiar do bazy danych wykorzystując parametryzowane zapytania SQL.</div>
+
+    <div class="method">def bulk_insert(self, records: list)</div>
+    <div class="desc">Zoptymalizowana metoda zapisu. Wykorzystuje metodę executemany do zapisu tysięcy rekordów w jednej transakcji.</div>
+  </div>
+</body>
+</html>
